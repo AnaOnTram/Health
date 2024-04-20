@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>BMI Calculator</title>
+        <style>
+            body {
+                align-content: center;
+                text-align: center;
+                background-image: linear-gradient(to right, pink, yellow);
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <a style="right: 0;" href="Beverage Rating.html">See Beverage Rating</a>
+        </header>
+        <h1>BMI CalCulator</h1>
+        <p>Input your weight and you height</p>
+        <input id="weight" value=0><label>KG<br><br>
+        <input id="height" value=0><label>cm<br><br>
+        <button onclick="myfunction()">Calculate</button><br>
+        <p id="response" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size: x-large;"></p>
+        <img src="https://www.cdc.gov/healthyweight/images/assessing/bmi-adult-fb-600x315.jpg?_=07167" alt="BMI">
+        <script>
+            function myfunction() {
+                var weight, height, bmi, status;
+            weight = parseFloat(document.getElementById("weight").value);
+            height = parseFloat(document.getElementById("height").value / 100);
+            bmi = weight / Math.pow(height, 2);
+            if (bmi < 18.5 || bmi >25) {
+                if (bmi <18.5) {
+                    document.getElementById("response").innerHTML="Your Body Mass Index is: " + bmi.toFixed(4) + "<br>" + "Your health status is: UnderWeight";
+                } else {
+                document.getElementById("response").innerHTML="Your Body Mass Index is: " + bmi.toFixed(4) + "<br>" + "Your health status is: OverWeight";
+            } }else {
+                document.getElementById("response").innerHTML="Your Body Mass Index is: " + bmi.toFixed(4) + "<br>" + "Your health status is: Healthy";
+            }
+        }
+            </script>
+</body>
+</html>

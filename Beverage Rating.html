@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Beverage Rating</title>
+        <style>
+            body {
+                align-content: center;
+                text-align: center;
+                background-image: linear-gradient(to right, pink, rgb(0, 204, 255));
+            }
+            img {
+                width: 300px;
+                height:auto;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <a style="right: 0;" href="bmi_calculator.html">See Your Body Status</a>
+        </header>
+        <h1>Bevergae Rating Signapore Standard</h1>
+        <p>Input two key figure from the nutrition information from the product</p>
+        <p style="font-family: 'Franklin Gothic Medium'; color:rgb(136, 255, 0)">Free Sugar</p><input id="sugar" value=0><label>gram per 100ml<br><br>
+        <p style="font-family: 'Franklin Gothic Medium'; color:rgb(255, 170, 0)">Saturated Fat</p><input id="fat" value=0><label>gram per 100ml<br><br>
+        <button onclick="myfunction()">Calculate</button><br>
+        <p id="response" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size: x-large; color: aliceblue;"></p>
+        <script>
+            function myfunction() {
+                var sugar, fat, grade;
+                sugar = parseFloat(document.getElementById("sugar").value);
+                fat = parseFloat(document.getElementById("fat").value);
+                if (sugar <= 1 && fat <= 0.7) {
+                document.getElementById("response").innerHTML = "The Rating is A <br> <br><img src='https://hpb.gov.sg/assets/images/A-simp-new.png' alt='A'>";
+                document.getElementById("response").style.color='green';
+            } else if (sugar <= 5 && fat <= 1.2) {
+                document.getElementById("response").innerHTML = "The Rating is B <br> <br><img src='https://hpb.gov.sg/assets/images/B-simp-new.png' alt='B'>";
+                document.getElementById("response").style.color='greenyellow';
+            } else if (sugar <= 10 && fat <= 2.8) {
+                document.getElementById("response").innerHTML = "The Rating is C <br> <br><img src='https://hpb.gov.sg/assets/images/C-simp-new.png' alt='C'>";
+                document.getElementById("response").style.color='orange';
+            } else {
+                document.getElementById("response").innerHTML = "The Rating is D <br> <br><img src='https://hpb.gov.sg/assets/images/D-simp-new.png' alt='D'>";
+                document.getElementById("response").style.color='red';
+            }
+        }
+                </script>
+                </body>
+</html>
